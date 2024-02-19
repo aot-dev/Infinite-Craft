@@ -8,8 +8,9 @@ export interface BoxProps {
 	emoji:string
     result:string
     type?:string
+    handleClick?:any
 }
-const Element:React.FC<BoxProps> = ({result,emoji,id,top,left,type}) => {
+const Element:React.FC<BoxProps> = ({result,emoji,id,top,left,type,handleClick}) => {
     
     const [{ isDragging }, drag] = useDrag(
 		() => ({
@@ -29,7 +30,7 @@ const Element:React.FC<BoxProps> = ({result,emoji,id,top,left,type}) => {
 		<span
 			className="item"
 			ref={drag}
-			data-testid="box"
+			onClick={handleClick}
 		>
 			{emoji} {result}
 		</span>

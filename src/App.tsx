@@ -4,8 +4,11 @@ import './App.css';
 import { initData } from './consts';
 import Element, { BoxProps } from './Element';
 import Instance from './Instance';
+import clear from './assets/clear.svg';
+import mute from './assets/mute.svg.svg'
+import sound from './assets/sound.svg'
 export interface DragItem {
-	type: string
+	type?: string
 	id: number
 	top: number
 	left: number
@@ -14,7 +17,7 @@ export interface DragItem {
 
 }
 function App() {
-  const [boxes, setBoxes] = useState<BoxProps[]>(initData);
+  const [boxes, setBoxes] = useState<DragItem[]>(initData);
   const [instances, setInstances] = useState<BoxProps[]>([]);
   const [searchValue,setSearchValue] = useState('');
   const idRef = useRef(1);
@@ -79,9 +82,20 @@ function App() {
   }
 
   const handleSearch = (e:string)=>{
-    
     setSearchValue(e);
-}
+  }
+  const resetData = ()=>{
+    alert('It will reset your data');
+    clearInstances();
+    setBoxes(initData);
+  }
+  const clearInstances = ()=>{
+    setInstances([]);
+  }
+  const handleClick = (elem:DragItem)=>{
+    const newElem = {id:idRef.current++,left:500, top:500, result:elem.result, emoji:elem.emoji};
+    setInstances([...instances,newElem]);
+  }
   return (
      <div  ref={drop} className='container'>
           {
@@ -90,7 +104,7 @@ function App() {
         <div className='sidebar'>
           <div className='items'>
           {
-            boxes.map((item)=> <Element key={item.id} result={item.result} emoji={item.emoji} id={item.id} top={item.top} left={item.left} type='item'></Element>)
+            boxes.filter((elem)=> elem.result.includes(searchValue)).map((item)=> <Element key={item.id} result={item.result} emoji={item.emoji} id={item.id} top={item.top} left={item.left} handleClick={()=>handleClick(item)} type='item'></Element>)
           }
           </div>
           <div className='sidebar-controls'>
@@ -98,7 +112,11 @@ function App() {
             </div>
           
         </div>
-        <div className="reset">Reset</div>
+        <div className="reset" onClick={resetData}>Reset</div>
+        <div className='side-controls'>
+          <img alt='Clear' src={clear} className="clear" onClick={()=>clearInstances()}/>
+          {/* <img src={sound} alt='Sound' className="sound" /> */}
+        </div>
       </div>
   );
 }
