@@ -11,6 +11,19 @@
   line-height: 1em;
   display: inline-block;
 }
+.instance {
+  font-size: 19.5px;
+  padding: 11px 11px 10px;
+  transition: scale .15s ease-in;
+  border-radius: 5px;
+  transform-origin: center center;
+  display: flex;
+  align-items: center;
+  contain: layout;
+  border: 1px solid;
+  position: fixed;
+  
+}
 .sidebar {
   width: 350px;
   right: 0;
@@ -55,6 +68,14 @@
   background: #fff;
   align-items: center;
 }
+.sidebar-search{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  position: relative;
+  box-sizing: border-box;
+  padding-right: 35px;
+}
 .sidebar-input {
   background-size: 23px 23px;
   background-position: 11px 12px;
@@ -66,6 +87,11 @@
   outline: 0;
   padding: 0 20px 0 90px;
   position: relative;
+  width: 100%;
+  background: url(./assets//search.svg) no-repeat;
+  svg {
+    width: 20px;
+  }
 }
 @media screen and (min-width: 1150px) {
   .side-controls {
@@ -74,6 +100,56 @@
     position: fixed;
 }
 }
-.clear {
+.clear, .sound {
   width:25px;
+  cursor: pointer;
+  margin: 2px;
+}
+.selected {
+  animation: 0.35s linear 0s infinite normal none running mobileJiggle;
+  margin: 2px;
+  background-color: #fffae6;
+  border-color: #877f64;
+  cursor: pointer;
+}
+@keyframes mobileJiggle {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.sound-box {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #9f9f9f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-sound {
+  width: 21px;
+}
+.site-title {
+  position: fixed;
+  top: 13px;
+  left: 13px;
+  width: 110px;
+  user-select: none;
 }

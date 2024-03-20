@@ -9,8 +9,9 @@ export interface BoxProps {
     result:string
     type?:string
     handleClick?:any
+	isSelected?:boolean
 }
-const Element:React.FC<BoxProps> = ({result,emoji,id,top,left,type,handleClick}) => {
+const Element:React.FC<BoxProps> = ({result,emoji,id,top,left,type,handleClick,isSelected}) => {
     
     const [{ isDragging }, drag] = useDrag(
 		() => ({
@@ -28,7 +29,7 @@ const Element:React.FC<BoxProps> = ({result,emoji,id,top,left,type,handleClick})
 	}
 	return (
 		<span
-			className="item"
+			className={`item ${isSelected ? 'selected' : ''}`}
 			ref={drag}
 			onClick={handleClick}
 		>

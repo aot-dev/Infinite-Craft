@@ -27,7 +27,7 @@ const Instance:React.FC<BoxProps> = ({result,emoji,id,top,left,type}) => {
 	}
 	return (
 		<span
-			className="item"
+			className="instance"
 			ref={drag}
 			style={{position:'absolute', left, top }}
 			data-testid="box"
