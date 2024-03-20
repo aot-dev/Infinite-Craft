@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Infinite-Craft/static/css/main.c30c9105.css",
+    "main.js": "/Infinite-Craft/static/js/main.bae4cf06.js",
+    "static/js/453.ed3810f9.chunk.js": "/Infinite-Craft/static/js/453.ed3810f9.chunk.js",
+    "static/media/d88.png": "/Infinite-Craft/static/media/d88.076a0319cdbca3051ac8.png",
+    "static/media/clear.svg": "/Infinite-Craft/static/media/clear.98a938ba75ba017e4bfd00bf0045d0cc.svg",
+    "static/media/sound.svg": "/Infinite-Craft/static/media/sound.ba413c202b4a0617fc48fdd1c52e75c5.svg",
+    "static/media/mute.svg": "/Infinite-Craft/static/media/mute.d062461d037457185e3ef88b58529eca.svg",
+    "static/media/search.svg": "/Infinite-Craft/static/media/search.f7632b2d45fe4aa4566d.svg",
+    "index.html": "/Infinite-Craft/index.html",
+    "main.c30c9105.css.map": "/Infinite-Craft/static/css/main.c30c9105.css.map",
+    "main.bae4cf06.js.map": "/Infinite-Craft/static/js/main.bae4cf06.js.map",
+    "453.ed3810f9.chunk.js.map": "/Infinite-Craft/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c30c9105.css",
+    "static/js/main.bae4cf06.js"
+  ]
+}
